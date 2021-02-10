@@ -232,7 +232,6 @@
 	y.style=("background-image:url(image/"+displayText+".jpg)");
 		//ajout d'un api meteo https://openweathermap.org/api
 window.fetch('http://api.openweathermap.org/data/2.5/weather?q='+displayText+'&appid=80c6285d4507d58b9bb10e93cebcf627').then(res => res.json()).then(resJson => z.innerText=resJson.weather[0].main);
-window.fetch('http://api.openweathermap.org/data/2.5/weather?q='+displayText+'&appid=80c6285d4507d58b9bb10e93cebcf627').then(res => res.json()).then(resJson => u.innerText=resJson.weather.main.temp);
 
 	console.log(y.style);
 	}
