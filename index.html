@@ -3,12 +3,27 @@
 	<head>
 	<charset="UTF-8">
 	  <style>
+
+		  footer{
+			  margin-top:10px;
+			background-color:lightcyan;
+			width: 20;
+			color:black;
+			padding-left: 75%;
+			font-weight:20;
+			
+
+		  }
 		  .div_section{
-			 
+			 width:60%;
+			 height:100%;
 			  color:black;
 			  display:flex;
-			  flex-wrap:wrap;
 			  flex-direction:row wrap;
+			  align-items: center;
+			  text-align: center;
+			  margin-left: auto;
+		    margin-right: auto;
 			  }
 		 .ville-name
 		 {
@@ -17,49 +32,59 @@
 			 margin: bottom 10px;
 			 font-family:fantasy;
 		 }
-		  #info{
-			  
-		  }
+
 		   .div_ville
 		  {
-			display:flex;
-			flex-wrap:wrap;
-			background-color:gainsboro;
+			text-align:center;
 			margin:10px;
-			border:red;			
+			padding:10%;
+			width:40px;
 			border-width: 3px;
-			/*border-top-style: dotted;
-			border-right-width: 20px;
-			border-bottom-color: hotpink;*/
-			border-top:4px solid rgb(31, 31, 230);
-			border-top-style:double;
-			border-top:10px solid red;
-			border-bottom-style:double;
+			font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+			font-size: 100%;
 			padding-top:5px;
 			padding-bottom:10px;
 			padding-left:10px;
 		  }
 		  .img-meteo{
 			margin-left: 10px;
+			margin-top: 7px;
+			width: 240px;
+			color:blue;
+
 		  }
 		  .div_menu
 		  {
+			  border-radius:15px;
 			  background:black;
 			  text-align:center;
 			  color:white;
 			  padding: 5px;
 		  }
-		  img{
-			width:25px;
-		  }
+
 		  label {
     		font-size: 1rem;
     		padding-right: 10px;
 			text-align:center;
 			}
 			.div-selection{
+				font-size:23px;
+				font-family: Gecko;
+				padding:10%;
+
 				margin-top: 10px;
+				margin:center;
 				position: relative;
+				margin-right: auto;
+				margin-left: auto;
+
+				}
+				.temp{
+					text-shadow: 0px 4px rgba(255, 255, 255, 0.671);
+					font-weight: 500;
+					font-size: 100px;
+					color:rgb(25, 150, 25);
+
 				}
 		  .select-ville
 		  {
@@ -71,62 +96,65 @@
 			  padding:5px;
 			  margin-top: 3px;
 			  text-align:center;
-			 
-			
-
+		  }
+		  .temperture
+		  {
+			text-shadow: 0px 4px rgba(12, 12, 12, 0.952);
+				font-weight: 50;
+				font-size: 50px;
+				color:aliceblue;
+		  }
+		  #txtNameVilleValue
+		  {
+			  text-align: center;
+			  padding-left:center;
+			  text-shadow: 0px 4px rgba(12, 12, 12, 0.952);
+ 			  font-weight: 50;
+ 			  font-size: 50px;
+ 			  color:rgb(203, 209, 214);
 		  }
 		  </style>
-    <script>
-function	showCity(){
-    let villeCourante = "Lyon";
-	let cities = document.querySelectorAll(".city");
-	let element=document.querySelector('#info');
-let l = cities.length; //
-
-console.log("citeis: "+cities);
-console.log("element: "+element.getAttribute);
-
-}
-
-function clickColor()
-{
-	this.style.backgroundColor="orange";
-}
-	</script>
-</head>
+   </head>
 <body onload=showCity() >
 <header>
     <div class="div_menu" >
 		<h1>TP Météo HTML</h1>
     </div>
-	<div class="div-selection">
-		<p id="info"></p>
-
-		<select class="select-ville" class="city" onchange=showCity()>
-			<option value="" selected disabled>--Please choose an option--</option>
-			<option value="Paris">Paris</option>
-			<option value="Mulhouse">Mulhouse</option>
-			<option value="Lyon">Lyon</option>
-			<option value="Saint-Etienne">Saint Etienne</option>
-			<option value="Bordeaux">Bordeaux</option>
-			<option value="Madrid" >Madrid</option>
-		</select>
-	</div>
+	
 </header>
 <article>
-   <div class="div_section">
+	<div class="div-selection">
+		<p> Choose a ville : </p>
 
-		<div class="div_ville" onclick=clickColor()>
-	  		<br class="ville-name">Paris
-	  		<br>25°, Orageux
+		<select class="select-ville" id="city" onchange=showCity()>
+			<option value=""  disabled>--Please choose an option--</option>
+			<option value="Paris" >Paris</option>
+			<option value="Mulhouse">Mulhouse</option>
+			<option value="Lyon" selected>Lyon</option>
+			<option value="Barcelone">Barcelone</option>
+			<option value="Bruxelles">Bruxelles</option>
+			<option value="Madrid" >Madrid</option>
+			<option value="Ile-maurice">ile maurice</option>
+		</select>
+	</div>
+   <div class="div_section" id="imgBack"  type="image"
+    src="image/default.png"
+	
+
+	>
+	
+		<div class="div_ville">
+			<p value="text" id="txtNameVilleValue"/>Paris<p>
+	  		<div class="temp">7°</div>
+				<div  class="temperture"> Nuageux</div>
 	  		<br><img  
 	  		src="/home/izem/Downloads/noun_clouds_653375.svg" 
 	 		class="img-meteo"
 	  		/>
 		</div>
-
+<!--
 		<div class="div_ville">	
-			<br class="ville-name">Villeurbanne
+			<br class="ville-name">Lyon
 			<br>25°, Orageux
 			<br><img  
 		   src="/home/izem/Downloads/noun_clouds_653375.svg"
@@ -135,7 +163,7 @@ function clickColor()
 		</div>
 		
 		<div class="div_ville">
-			<br class="ville-name">Villeurbanne
+			<br class="ville-name">Mulhouse
 			<br>25°, Orageux
 			<br><img  
 		   src="/home/izem/Downloads/noun_clouds_653375.svg"
@@ -144,7 +172,7 @@ function clickColor()
 		</div>
 	
 		<div class="div_ville">
-			<br class="ville-name">Villeurbanne
+			<br class="ville-name">Madrid
 			<br>25°, Orageux
 			<br><img  
 			src="/home/izem/Downloads/noun_clouds_653375.svg"
@@ -153,8 +181,7 @@ function clickColor()
 		</div>
 	
 		<div class="div_ville">
-			
-			<br class="ville-name">Villeurbanne
+			<br class="ville-name">Barcelone
 			<br>25°, Orageux
 			<br><img  
 		   src="/home/izem/Downloads/noun_clouds_653375.svg"
@@ -163,15 +190,44 @@ function clickColor()
 		</div>
 
     	<div class="div_ville">
-			
-				<br class="ville-name">Mulhouse
+				<br class="ville-name">ile-maurice
 				<br>25°, Orageux 
 				<br><img  
 			   src="/home/izem/Downloads/noun_clouds_653375.svg"
 				class="img-meteo"/>
 	    </div>
+		-->
    </div>
+
 </article>
+
+
+
+<footer>
+
+
+<div>Projet Méteo: Réalise par: </div>
+<div>Abderrahim BOUNIF</div>
+<div>Rafik BOUSSAA </div>
+</footer>
 </body>
 
+
 </html>
+
+
+<script>
+	function showCity(){
+	var x = document.getElementById("txtNameVilleValue");
+	var y = document.getElementById("imgBack");
+	var selectId = document.getElementById('city');
+	var displayText=selectId.options[selectId.selectedIndex].value;
+	
+	x.innerText=displayText;
+	y.style=("background-image:url(image/"+displayText+".jpg)");
+
+	console.log(y.style);
+	}
+</script>
+
+
