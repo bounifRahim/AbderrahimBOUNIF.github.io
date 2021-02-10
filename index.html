@@ -147,8 +147,8 @@
 	
 		<div class="div_ville">
 			<p value="text" id="txtNameVilleValue"/>Paris<p>
-	  		<div class="temp">7°</div>
-				<div  class="temperture"> Nuageux</div>
+	  		<div class="temp" id="tempC">7°</div>
+				<div  class="temperture" id="tempEtat"> Nuageux</div>
 	  		<br><img  
 	  		src="image/noun_clouds_653375.svg" 
 	 		class="img-meteo"
@@ -222,6 +222,9 @@
 	function showCity(){
 	var x = document.getElementById("txtNameVilleValue");
 	var y = document.getElementById("imgBack");
+	var z = document.getElementById("tempEtat");
+	var u = document.getElementById("tempC");
+		
 	var selectId = document.getElementById('city');
 	var displayText=selectId.options[selectId.selectedIndex].value;
 	
@@ -229,6 +232,7 @@
 	y.style=("background-image:url(image/"+displayText+".jpg)");
 		//ajout d'un api meteo https://openweathermap.org/api
 window.fetch('http://api.openweathermap.org/data/2.5/weather?q='+displayText+'&appid=80c6285d4507d58b9bb10e93cebcf627').then(res => res.json()).then(resJson => z.innerText=resJson.weather[0].main);
+window.fetch('http://api.openweathermap.org/data/2.5/weather?q='+displayText+'&appid=80c6285d4507d58b9bb10e93cebcf627').then(res => res.json()).then(resJson => u.innerText=resJson.weather.main.temp);
 
 	console.log(y.style);
 	}
