@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<charset="UTF-8">
+	  <style>
+		  .div_section{
+			 
+			  color:black;
+			  display:flex;
+			  flex-wrap:wrap;
+			  flex-direction:row wrap;
+			  }
+		 .ville-name
+		 {
+			 width:100px;
+			 font-size: 3px;
+			 margin: bottom 10px;
+			 font-family:fantasy;
+		 }
+		  #info{
+			  
+		  }
+		   .div_ville
+		  {
+			display:flex;
+			flex-wrap:wrap;
+			background-color:gainsboro;
+			margin:10px;
+			border:red;			
+			border-width: 3px;
+			/*border-top-style: dotted;
+			border-right-width: 20px;
+			border-bottom-color: hotpink;*/
+			border-top:4px solid rgb(31, 31, 230);
+			border-top-style:double;
+			border-top:10px solid red;
+			border-bottom-style:double;
+			padding-top:5px;
+			padding-bottom:10px;
+			padding-left:10px;
+		  }
+		  .img-meteo{
+			margin-left: 10px;
+		  }
+		  .div_menu
+		  {
+			  background:black;
+			  text-align:center;
+			  color:white;
+			  padding: 5px;
+		  }
+		  img{
+			width:25px;
+		  }
+		  label {
+    		font-size: 1rem;
+    		padding-right: 10px;
+			text-align:center;
+			}
+			.div-selection{
+				margin-top: 10px;
+				position: relative;
+				}
+		  .select-ville
+		  {
+			  background-color:rgb(255, 255, 255);
+			  font-family: Georgia, 'Times New Roman', Times, serif;
+			  border-radius:8px;
+			  margin:5px;
+			  font-size:20px;
+			  padding:5px;
+			  margin-top: 3px;
+			  text-align:center;
+			 
+			
+
+		  }
+		  </style>
+    <script>
+function	showCity(){
+    let villeCourante = "Lyon";
+	let cities = document.querySelectorAll(".city");
+	let element=document.querySelector('#info');
+let l = cities.length; //
+
+console.log("citeis: "+cities);
+console.log("element: "+element.getAttribute);
+
+}
+
+function clickColor()
+{
+	this.style.backgroundColor="orange";
+}
+	</script>
+</head>
+<body onload=showCity() >
+<header>
+    <div class="div_menu" >
+		<h1>TP Météo HTML</h1>
+    </div>
+	<div class="div-selection">
+		<p id="info"></p>
+
+		<select class="select-ville" class="city" onchange=showCity()>
+			<option value="" selected disabled>--Please choose an option--</option>
+			<option value="Paris">Paris</option>
+			<option value="Mulhouse">Mulhouse</option>
+			<option value="Lyon">Lyon</option>
+			<option value="Saint-Etienne">Saint Etienne</option>
+			<option value="Bordeaux">Bordeaux</option>
+			<option value="Madrid" >Madrid</option>
+		</select>
+	</div>
+</header>
+<article>
+   <div class="div_section">
+
+		<div class="div_ville" onclick=clickColor()>
+	  		<br class="ville-name">Paris
+	  		<br>25°, Orageux
+	  		<br><img  
+	  		src="/home/izem/Downloads/noun_clouds_653375.svg" 
+	 		class="img-meteo"
+	  		/>
+		</div>
+
+		<div class="div_ville">	
+			<br class="ville-name">Villeurbanne
+			<br>25°, Orageux
+			<br><img  
+		   src="/home/izem/Downloads/noun_clouds_653375.svg"
+		   class="img-meteo"
+			/>
+		</div>
+		
+		<div class="div_ville">
+			<br class="ville-name">Villeurbanne
+			<br>25°, Orageux
+			<br><img  
+		   src="/home/izem/Downloads/noun_clouds_653375.svg"
+		   class="img-meteo"
+			/>
+		</div>
+	
+		<div class="div_ville">
+			<br class="ville-name">Villeurbanne
+			<br>25°, Orageux
+			<br><img  
+			src="/home/izem/Downloads/noun_clouds_653375.svg"
+			class="img-meteo"
+			/>
+		</div>
+	
+		<div class="div_ville">
+			
+			<br class="ville-name">Villeurbanne
+			<br>25°, Orageux
+			<br><img  
+		   src="/home/izem/Downloads/noun_clouds_653375.svg"
+		   class="img-meteo"
+			/>
+		</div>
+
+    	<div class="div_ville">
+			
+				<br class="ville-name">Mulhouse
+				<br>25°, Orageux 
+				<br><img  
+			   src="/home/izem/Downloads/noun_clouds_653375.svg"
+				class="img-meteo"/>
+	    </div>
+   </div>
+</article>
+</body>
+
+</html>
