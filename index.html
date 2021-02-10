@@ -136,7 +136,6 @@
 			<option value="Barcelone">Barcelone</option>
 			<option value="Bruxelles">Bruxelles</option>
 			<option value="Madrid" >Madrid</option>
-			<option value="Ile-maurice">ile maurice</option>
 		</select>
 	</div>
    <div class="div_section" id="imgBack"  type="image"
@@ -154,51 +153,6 @@
 	 		class="img-meteo"
 	  		/>
 		</div>
-<!--
-		<div class="div_ville">	
-			<br class="ville-name">Lyon
-			<br>25°, Orageux
-			<br><img  
-		   src="/home/izem/Downloads/noun_clouds_653375.svg"
-		   class="img-meteo"
-			/>
-		</div>
-		
-		<div class="div_ville">
-			<br class="ville-name">Mulhouse
-			<br>25°, Orageux
-			<br><img  
-		   src="/home/izem/Downloads/noun_clouds_653375.svg"
-		   class="img-meteo"
-			/>
-		</div>
-	
-		<div class="div_ville">
-			<br class="ville-name">Madrid
-			<br>25°, Orageux
-			<br><img  
-			src="/home/izem/Downloads/noun_clouds_653375.svg"
-			class="img-meteo"
-			/>
-		</div>
-	
-		<div class="div_ville">
-			<br class="ville-name">Barcelone
-			<br>25°, Orageux
-			<br><img  
-		   src="/home/izem/Downloads/noun_clouds_653375.svg"
-		   class="img-meteo"
-			/>
-		</div>
-
-    	<div class="div_ville">
-				<br class="ville-name">ile-maurice
-				<br>25°, Orageux 
-				<br><img  
-			   src="/home/izem/Downloads/noun_clouds_653375.svg"
-				class="img-meteo"/>
-	    </div>
-		-->
    </div>
 
 </article>
@@ -233,7 +187,7 @@
 		//ajout d'un api meteo https://openweathermap.org/api
 		window.fetch('http://api.openweathermap.org/data/2.5/weather?q='+displayText+'&appid=80c6285d4507d58b9bb10e93cebcf627').then(res => res.json()).then(resJson => z.innerText=resJson.weather[0].main);
 
-		window.fetch('http://api.openweathermap.org/data/2.5/weather?q='+displayText+'&units=metric&appid=80c6285d4507d58b9bb10e93cebcf627').then(res => res.json()).then(resJson => u.innerText=resJson.main.temp);
+		window.fetch('http://api.openweathermap.org/data/2.5/weather?q='+displayText+'&units=metric&appid=80c6285d4507d58b9bb10e93cebcf627').then(res => res.json()).then(resJson => u.innerText=resJson.main.temp+"°C");
 
 //window.fetch('http://api.openweathermap.org/data/2.5/weather?q='+displayText+'&lang=fr&units=metrice&appid=80c6285d4507d58b9bb10e93cebcf627').then(res => res.json()).then(resJson => console(resJson.weather));
 
