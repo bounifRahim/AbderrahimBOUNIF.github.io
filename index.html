@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<title>CCI Meteo</title>
 	<charset="UTF-8">
+		
 	  <style>
 
 		  footer{
-			  margin-top:10px;
+			margin-top:10px;
 			background-color:lightcyan;
 			width: 20;
 			color:black;
-			padding-left: 75%;
+			padding-left: 70%;
 			font-weight:20;
-			
+			radius:15px;
+			font-size:20px;
 
 		  }
 		  .div_section{
@@ -36,6 +39,7 @@
 		   .div_ville
 		  {
 			text-align:center;
+			padding:10%;
 			width:40px;
 			border-width: 3px;
 			font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -46,7 +50,6 @@
 		  }
 		  .img-meteo{
 			margin-left: 10px;
-			margin-top: 7px;
 			width: 240px;
 			color:blue;
 
@@ -87,11 +90,12 @@
 			  background-color:rgb(255, 255, 255);
 			  font-family: Georgia, 'Times New Roman', Times, serif;
 			  border-radius:8px;
-			  margin:5px;
+				position: relative;
 			  font-size:20px;
-			  padding:5px;
-			  margin-top: 3px;
-			  text-align:center;
+			  padding:16px;
+			  margin-left: 30%;
+		
+			 
 		  }
 		  .temperture
 		  {
@@ -107,9 +111,11 @@
 			  text-shadow: 0px 4px rgba(12, 12, 12, 0.952);
  			  font-weight: 50;
  			  font-size: 50px;
+			   margin-left:30% ;
  			  color:rgb(203, 209, 214);
 		  }
 		  </style>
+		  
    </head>
 <body onload=showCity() >
 <header>
@@ -144,7 +150,7 @@
 	  		<div class="temp">7°</div>
 				<div  class="temperture"> Nuageux</div>
 	  		<br><img  
-	  		src="image/noun_clouds_653375.svg" 
+	  		src="/home/izem/Downloads/noun_clouds_653375.svg" 
 	 		class="img-meteo"
 	  		/>
 		</div>
