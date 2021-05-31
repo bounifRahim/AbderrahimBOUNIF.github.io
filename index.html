@@ -1,236 +1,79 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>CCI Meteo</title>
-	<charset="UTF-8">
-		
-	  <style>
+<head>
+<meta charset="utf-8">
+<title>Know Your Self</title>
+<link rel="shortcut icon" href="ressources/logoYellowH.gif">
 
-		  footer{
-			margin-top:10px;
-			background-color:lightcyan;
-			width: 20;
-			color:black;
-			padding-left: 70%;
-			font-weight:20;
-			radius:15px;
-			font-size:20px;
+<!-- CSS -->
+<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="style/style.css" />
+<!-- JavaScript -->
 
-		  }
-		  .div_section{
-			 width:60%;
-			 height:100%;
-			  color:black;
-			  display:flex;
-			  flex-direction:row wrap;
-			  align-items: center;
-			  text-align: center;
-			  margin-left: auto;
-		    margin-right: auto;
-			  }
-		 .ville-name
-		 {
-			 width:100px;
-			 font-size: 3px;
-			 margin: bottom 10px;
-			 font-family:fantasy;
-		 }
+</head>
 
-		   .div_ville
-		  {
-			text-align:center;
-			padding:10%;
-			width:40px;
-			border-width: 3px;
-			font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-			font-size: 100%;
-			padding-top:5px;
-			padding-bottom:10px;
-			padding-left:10px;
-		  }
-		  .img-meteo{
-			margin-left: 10px;
-			width: 240px;
-			color:blue;
-
-		  }
-		  .div_menu
-		  {
-			  border-radius:15px;
-			  background:black;
-			  text-align:center;
-			  color:white;
-			  padding: 5px;
-		  }
-
-		  label {
-    		font-size: 1rem;
-    		padding-right: 10px;
-			text-align:center;
-			}
-			.div-selection{
-				font-size:23px;
-				font-family: Gecko;
-				padding:10%;
-				margin:center;
-				position: relative;
-				margin-right: auto;
-				margin-left: auto;
-
-				}
-				.temp{
-					text-shadow: 0px 4px rgba(255, 255, 255, 0.671);
-					font-weight: 500;
-					font-size: 100px;
-					color:rgb(25, 150, 25);
-
-				}
-		  .select-ville
-		  {
-			  background-color:rgb(255, 255, 255);
-			  font-family: Georgia, 'Times New Roman', Times, serif;
-			  border-radius:8px;
-				position: relative;
-			  font-size:20px;
-			  padding:16px;
-			  margin-left: 30%;
-		
-			 
-		  }
-		  .temperture
-		  {
-			text-shadow: 0px 4px rgba(12, 12, 12, 0.952);
-				font-weight: 50;
-				font-size: 50px;
-				color:aliceblue;
-		  }
-		  #txtNameVilleValue
-		  {
-			  text-align: center;
-			  padding-left:center;
-			  text-shadow: 0px 4px rgba(12, 12, 12, 0.952);
- 			  font-weight: 50;
- 			  font-size: 50px;
-			   margin-left:30% ;
- 			  color:rgb(203, 209, 214);
-		  }
-		  </style>
-		  
-   </head>
-<body onload=showCity() >
-<header>
-    <div class="div_menu" >
-		<h1>TP Météo HTML</h1>
+<body>
+<!--PageHello-->  
+    <div id="pagehello">
+        <h1 id="solve">Solve: Un fruit + station !</h1>
+        <img src="ressources/logoBegin.gif" id="imagebegin">
+       <div id="active-authen" >
+        <button type="submit" class="btn btn-primary"  id="active-authen-btn" onclick="activeStartAuthen();">Start</button>     
     </div>
-	
-</header>
-<article>
-	<div class="div-selection">
-		<p> Choose a ville : </p>
+    <!--Authentification Page hello-->  
+        <div class="form-group col-md-12" id="passewordws">
+            
+            <input type="password" class="form-control" id="inputpassword" placeholder="Password">
+            <button type="submit" class="btn btn-primary" id="activepagegame" onclick="activePageGame();">Sign in</button>     
+        </div>
+        
+    </div>
+     <!--Menu Game-->  
+        <nav class="navbar navbar-expand-lg navbar-dark  menu-bar-site pagegame" id="quizmenu">
+            <div class="justify-content-md-ceter ">
+               <spinner id="code1" >
+                   <IMG SRC="ressources/logoRedWhite.gif" class="bottun-menu" id="logo-site"  type="button" onclick="activePrank();"></spinner>
+               <spinner class=" justify-content-md-ceter"><button class="btn btn-success bottun-menu bottun-menu-forms" id="start-str" onclick="executeStart();">start</button> </spinner>
+               <spinner class=" justify-content-md-ceter"><button class="btn btn-success bottun-menu bottun-menu-forms" id="about-str" onclick="executeAbout();">about</button> </spinner> 
+               <spinner class=" justify-content-md-ceter"><button class="btn btn-success bottun-menu bottun-menu-forms" id="contact-str" onclick="executeContact();">contact</button> </spinner>
+            </div>
+        </nav>
+    <!--Game Quiz-->  
+    <div class="container-fluid red pagegame"   id="quiz" >
+    <h1 class="superws"><span>Q</span><i>uiz</i> </h1>
+    <h2 id="question" class="superws"></h2>
+    <h3 id="score" class="superws">  </h3>      
+    <div class="choices row superws">
+        <button id="guess0" class="btn btn-success btn-choice col-xs-12 col-sn-12 col-md-12 col-lg-12">
+            <p id="choice0"></p>
+        </button>
+        <button id="guess1" class="btn btn-success btn-choice col-xs-6 col-sn-6 col-md-6 col-lg-6">
+            <p id="choice1"></p>
+        </button>
+        <button id="guess2" class="btn btn-success btn-choice col-xs-6 col-sn-6 col-md-6 col-lg-6">
+            <p id="choice2"></p>
+        </button>
+        <button id="guess3" class="btn btn-success btn-choice col-xs-6 col-sn-6 col-md-6 col-lg-6">
+            <p id="choice3"></p>
+        </button>
+      
+        </div>
+       
+    </div>
+   
+<!--Surprise ;) vidéo-->  
+<div id="superws"  class="container-fluid red pagegame">   
+    <h1> Choose One! </h1>   
+<div>
+<img src="ressources/logoYellowH.gif" class="shows" onclick='window.open("https://drive.google.com/file/d/13tXfeJjWMx6antYxFiaR7OSsxxxiQ73-/view?usp=sharing")'>        
+<img src="ressources/dala3news.gif" class="shows" onclick='window.open("https://drive.google.com/file/d/13tXfeJjWMx6antYxFiaR7OSsxxxiQ73-/view?usp=sharing")'>
+<img src="ressources/logoBegin.gif" class="shows" onclick='window.open("https://drive.google.com/file/d/13tXfeJjWMx6antYxFiaR7OSsxxxiQ73-/view?usp=sharing")'>
+<img src="ressources/logoBlackH.gif" class="shows" onclick='window.open("https://drive.google.com/file/d/13tXfeJjWMx6antYxFiaR7OSsxxxiQ73-/view?usp=sharing")'>
+<img src="ressources/logoRedWhite.gif" class="shows" onclick='window.open("https://drive.google.com/file/d/13tXfeJjWMx6antYxFiaR7OSsxxxiQ73-/view?usp=sharing")'>
+<img src="ressources/nbLogo.gif" class="shows" onclick='window.open("https://drive.google.com/file/d/13tXfeJjWMx6antYxFiaR7OSsxxxiQ73-/view?usp=sharing")'>
+</div>
+</div>
 
-		<select class="select-ville" id="city" onchange=showCity()>
-			<option value=""  disabled>--Please choose an option--</option>
-			<option value="Paris"      >Paris</option>
-			<option value="Mulhouse"   >Mulhouse</option>
-			<option value="Lyon"       selected>Lyon</option>
-			<option value="Barcelone"  >Barcelone</option>
-			<option value="Bruxelles"  >Bruxelles</option>
-			<option value="Madrid"    >Madrid</option>
-		</select>
-	</div>
-   <div class="div_section" id="imgBack"  type="image"
-    src="image/default.png"
-	
-
-	>
-	
-		<div class="div_ville">
-			<p value="text" id="txtNameVilleValue"/>Paris<p>
-	  		<div class="temp" id="tempC">7°</div>
-				<div  class="temperture" id="tempEtat"> Nuageux</div>
-	  		<br><img  
-	  		src="image/noun_clouds_653375.svg" 
-	 		class="img-meteo"
-			 id="image-meteo"
-	  		/>
-		</div>
-   </div>
-
-</article>
-
-
-
-<footer>
-
-
-<div>Projet Méteo: Réalise par: </div>
-<div>Abderrahim BOUNIF</div>
-<div>Rafik BOUSSAA </div>
-</footer>
-</body>
-
-
-</html>
-
-
-<script>
-	var nameVille=[
-	"",
-	"Paris",    
-	"Mulhouse" ,
-	"Lyon"     ,
-	"Barcelone",
-	"Bruxelles",
-	"Madrid" 
-	];
-	var nx=[[0,0],[1,1],[2,2],[3,3,"hhh"],[4,4,4]];
-console.log(nx);
-	function showCity(){
-	var x = document.getElementById("txtNameVilleValue");
-	var y = document.getElementById("imgBack");
-	var z = document.getElementById("tempEtat");
-	var u = document.getElementById("tempC");
-		
-	var selectId = document.getElementById('city');
-	///displayText=> recupère le nom de la ville direction en accedant direction à id city
-	//var displayText=selectId.options[selectId.selectedIndex].value;
-	
-	
-	x.innerText=nameVille[selectId.selectedIndex];
-	y.style=("background-image:url(image/"+nameVille[selectId.selectedIndex]+".jpg)");
-		//ajout d'un api meteo https://openweathermap.org/api
-		window.fetch('http://api.openweathermap.org/data/2.5/weather?q='
-					+nameVille[selectId.selectedIndex]
-					+'&appid=80c6285d4507d58b9bb10e93cebcf627')
-					.then(res => res.json())
-					.then(resJson => z.innerText=resJson.weather[0].main);
-
-		window.fetch('http://api.openweathermap.org/data/2.5/weather?q='
-					+nameVille[selectId.selectedIndex]
-					+'&units=metric&appid=80c6285d4507d58b9bb10e93cebcf627')
-					.then(res => res.json())
-					.then(resJson => u.innerText=Math.trunc(resJson.main.temp)+"°C");
-				
-					var ui = document.getElementById("image-meteo");
-			
-		window.fetch('http://api.openweathermap.org/data/2.5/weather?q='
-					+nameVille[selectId.selectedIndex]
-					+'&units=metric&appid=80c6285d4507d58b9bb10e93cebcf627')
-					.then(res => res.json())
-					.then(resJson => ui.src="http://openweathermap.org/img/wn/"+resJson.weather[0].icon+"@2x.png");
-					window.fetch('http://api.openweathermap.org/data/2.5/weather?q='
-					+nameVille[selectId.selectedIndex]
-					+'&units=metric&appid=80c6285d4507d58b9bb10e93cebcf627')
-					.then(res => res.json())
-					.then(resJson => console.log(resJson));
-			
-					
-					
-//window.fetch('http://api.openweathermap.org/data/2.5/weather?q='+displayText+'&lang=fr&units=metrice&appid=80c6285d4507d58b9bb10e93cebcf627').then(res => res.json()).then(resJson => console(resJson.weather));
-
-// console.log(selectId.selectedIndex);
-// console.log(nameVille);
-	}
-</script>
-
-
+<script  src="control.js" type="text/javascript"></script>
+ </body>
+ </html>

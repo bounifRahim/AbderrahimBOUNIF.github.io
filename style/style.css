@@ -1,0 +1,178 @@
+body{
+    font-family: 'Trattatello', fantasy;
+    display: grid;
+    align-items: center;
+    justify-items: left;
+    background:rgb(5, 21, 26);    
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+span{
+    color: #FFa502;
+
+}
+
+#logo-site{  /* logo-site is an id*/
+    width: 20%;
+    max-width: 140px ;
+    min-width: 70px;
+    cursor: pointer;
+    border-radius:18%;
+    /*background-color:#666;*/
+    padding: 3px;
+}
+
+#logo-site:hover{
+    box-shadow: 7px 7px #995858;
+}
+
+.menu-bar-site{
+margin-bottom: 1%;
+color: #FFa502;
+display: grid;
+align-items: right;
+justify-items: right;
+}
+
+.bottun-menu{
+    margin-left: 1%;
+
+    margin-right: 2%;
+    font-size:x-large;
+    color: darkgray;
+}
+
+.bottun-menu-forms{
+    border-radius:10%;
+    padding: 3px;
+}
+
+.red
+{
+    height: 600px;
+    background-color: red;
+}
+
+.pink 
+{
+    height: 600px;
+    background-color:#FFC0CB;
+}
+
+h1{
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+h3{
+    color: #FFa502;
+    font-size: 1.5rem;
+}
+
+.choices {
+    margin: 3rem auto 3rem;
+    width : 500px;
+}
+
+.btn-choice{
+    flex: 1 0 45%;
+    width: 500px;
+    height: 100px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    margin: .4rem;
+    outline: none;
+    background: #dfe4ea;
+    user-select: none;
+    font-weight: 600;  
+    font-size: 1.3rem;
+    margin-bottom: 0.4rem ;
+    color: black;
+}
+
+
+#quiz {
+    width:100%;
+   
+   
+}
+#question {
+    color: #dfe4ea;
+    align-items: center;
+    width:100%;
+ 
+}
+#score{
+    color: #dfe4ea;
+}
+#progress{
+    color: #2f3542;
+    font-size:  1.3rem;
+    
+
+}
+.pagegame{
+    display:none;
+}
+#wsalerte{
+    font-size:1em;
+}
+#passewordws{
+    align-items: center;
+    
+    color: #eb67b0;
+   
+    display: none;
+}
+#pagehello{
+    color: #FFa502;
+    
+    font-size:  3rem;
+    position: relative;
+    text-align: center;
+    text-shadow: #FFC0CB;
+    align-items: center;
+    align-content: center;   
+    margin-top: 3%;
+    margin-left: 35%;
+}
+
+#imagebegin{
+    align-items: center;
+    vertical-align: middle;
+}
+
+
+#active-authen-btn{
+    font-size: 1.3em;
+    color: #dfe4ea;
+    background-color: black;
+}
+
+#recette-image{
+    size: 5%;
+    width: 25%;
+}
+#superws{
+    display: none;
+    
+    align-items: flex-start;
+    justify-content: space-between;
+  
+}
+
+.shows{
+    width: 20%;
+}
+#solve{
+    display: none;
+    font-size: 1em;
+}
